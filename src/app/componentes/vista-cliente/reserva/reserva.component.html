@@ -1,0 +1,66 @@
+<app-nav></app-nav>
+<div class="d-flex justify-content-center  pt-4 pb-4" style="background-image:url(https://www.hotellimaq.com/wp-content/uploads/2019/06/hotel-cerca-aeropuerto-de-lima-jorge-chavez.jpg);background-repeat: no-repeat; width: 100%;">
+    <div class="card shadow col-xs-12 col-sm-6 col-md-6 col-lg-4   p-3" style="background: rgb(114 112 110 / 60%); width: 700px;"> 
+        <div class="mb-4 d-flex justify-content-start align-items-center" >   
+            <h4 style="padding-left: 25%;"> Solicitar Reserva</h4>
+        </div>
+        <div class="mb-5 ">
+            <form [formGroup]="reserva" (ngSubmit)="solicitarReserva()" class="formRegistro">
+                <div class="mb-4"> 
+                    <label for="nombre"> <i class="bi bi-person-fill "></i> Nombre</label>
+                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder= "ejm: Maria" required formControlName="nombreCliente">
+                    <div class="nombre text-danger "></div>
+                </div>
+                <div class="mb-4"> 
+                    <label for="apellido"> <i class="bi bi-person-bounding-box "></i> Apellidos Cliente</label>
+                    <input type="text" class="form-control" name="apellido" id="apellido" placeholder= "ejm: Vera" required formControlName="apellidosCliente">
+                    <div class="apellido text-danger"></div>
+                </div>
+                <div class="mb-4">
+                    <label for="correo"><i class="bi bi-envelope-fill"></i> Correo</label>
+                    <input type="email" class="form-control" name="correo" id="correo" placeholder= "ejm: Maria@gmail.com" required formControlName="correoCliente"> 
+                    <div class="correo text-danger"></div>
+                    
+                </div>  
+                <div class="mb-4">
+                    <label for="numero"><i class="bi bi-envelope-fill"></i> Numero Celular</label>
+                    <input type="text" class="form-control" name="numero" id="numero" placeholder= "ejm: 999 888 777" required formControlName="numeroCelularCliente">
+                    <div class="correo text-danger"></div>
+                    
+                </div> 
+                <div class="mb-4">
+                    <label for="fechaIngreso"><i class="bi bi-envelope-fill"></i> Fecha Ingreso</label>
+                    <input type="date" class="form-control" name="fechaIngreso" id="fechaIngreso"  required formControlName="fechaIngreso">
+                    <div class="fecha text-danger"></div>
+                    
+                </div> 
+                <div class="mb-4">
+                    <label for="fechaSalida"><i class="bi bi-envelope-fill"></i> Fecha Salida</label>
+                    <input type="date" class="form-control" name="fechaSalida" id="fechaSalida"  required formControlName="fechaSalida">
+                    <div class="fecha text-danger"></div>
+                    
+                </div>
+                <div class="mb-4">
+                    <label for="CPersonas"><i class="bi bi-envelope-fill"></i>Tipo de Habitacion</label>
+                    <input type="text" class="form-control" name="CPersonas" id="CPersonas" placeholder= "1" required formControlName="tipoHabitacion">
+                    <div class="CPersonastext-danger"></div>
+                    
+                </div> 
+                <div class="mb-4">
+                    <label for="CPersonas"><i class="bi bi-envelope-fill"></i>Tipo de Pago</label>
+                    <input type="text" class="form-control" name="CPersonas" id="CPersonas" placeholder= "1" required formControlName="tipoDePago">
+                    <div class="CPersonastext-danger"></div>
+                    
+                </div> 
+                <div class="mb-2">
+                    <button id ="submit" class="col-12 btn btn-primary" style="height:50px;">
+                        <span>Enviar </span><i id="icono" class=""></i>
+                    </button>
+                    
+                </div>  
+                          
+            </form>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

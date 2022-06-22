@@ -1,0 +1,75 @@
+<app-nav-recepcionista></app-nav-recepcionista>
+<h1 class="text-center" style="padding-top: 30px;">Añadir reservas</h1>
+<div class="container-sm" style="padding-top: 40px;">
+  <form class="row g-3" [formGroup]="reserva" (ngSubmit)="Reservar()">
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">Fecha Ingreso</label>
+      <input type="date" class="form-control" id="validationDefault01" formControlName="fechaIngresoR" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Fecha Salida</label>
+      <input type="date" class="form-control" id="validationDefault02"  formControlName="fechaSalidaR" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">Cantidad Personas</label>
+      <input type="number" class="form-control" id="validationDefault01"  formControlName="catidadPersonasR" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Codigo Hotel</label>
+      <input type="text" class="form-control" id="validationDefault02" formControlName="codH" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">Codigo Cliente</label>
+      <input type="text" class="form-control" id="validationDefault01"  formControlName="codC" required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault02" class="form-label">Codigo Recepcionista</label>
+      <input type="text" class="form-control" id="validationDefault02" formControlName="codRE"  required>
+    </div>
+    <div class="col-md-4">
+      <label for="validationDefault01" class="form-label">Precio Reserva</label>
+      <input type="number" class="form-control" id="validationDefault01" required formControlName="precioR" required>
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit">Agregar Reserva</button>
+    </div>
+  </form>
+</div>
+
+<div class="container-fluid" style="padding-top:20px;">
+    <table class="table align-middle mb-0 bg-white table-bordered">
+        <thead class="bg-light">
+          <tr>
+            <th>Id</th>
+            <th>Fecha Ingreso</th>
+            <th>Fecha Salida</th>
+            <th>Cantidad Personas</th>
+            <th>Codigo Habitacion</th>
+            <th>Codigo Cliente</th>
+            <th>Codigo Recepcionista</th> 
+            <th>Precio reserva</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reserva of Reservas; index as i">
+            <td>{{reserva.id}}</td>
+            <td>{{reserva.fechaIngresoR}}</td>
+            <td>{{reserva.fechaSalidaR}}</td>
+            <td>{{reserva.catidadPersonasR}}</td>
+            <td>{{reserva.codH}}</td>
+            <td>{{reserva.codC}}</td>
+            <td>{{reserva.codRE}}</td>
+            <td>{{reserva.precioR}}</td>
+            <td>
+              <button type="button" class="btn btn-success btn-sm" (click)="modificar(i)">Modificar</button>
+              
+            </td> 
+            <td>
+                <button type="button" class="btn btn-danger btn-sm" style="margin-left: 10px;" (click)="eliminar(i)">Eliminar</button>
+            </td>
+          </tr>
+    
+        </tbody>
+      </table>
+    
+</div>
